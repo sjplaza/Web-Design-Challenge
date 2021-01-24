@@ -6,7 +6,7 @@
     <title>Latitude Analysis</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="WebVisualizations/Resources/css/styles.css">
 </head>
 
 <body>
@@ -25,127 +25,141 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Plots
+                        <button onclick="myFunction()" class="dropbtn">Plots </button>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="./WebVisualizations/temp.html">Max Temperature</a>
-                        <a class="dropdown-item" href="./WebVisualizations/humidity.html">Humidity</a>
-                        <a class="dropdown-item" href="./WebVisualizations/clouds.html">Cloudiness</a>
-                        <a class="dropdown-item" href="./WebVisualizations/wind.html">Wind Speed</a>
-                    </div>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a class="dropdown-item" href="WebVisualizations/temp.html">Max Temperature</a>
+                            <a class="dropdown-item" href="WebVisualizations/humidity.html">Humidity</a>
+                            <a class="dropdown-item" href="WebVisualizations/clouds.html">Cloudiness</a>
+                            <a class="dropdown-item" href="WebVisualizations/wind.html">Wind Speed</a>
+                        </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./WebVisualizations/compare.html">Comparisons<span
+                    <a class="nav-link" href="WebVisualizations/compare.html">Comparisons<span
                             class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./WebVisualizations/data.html">Data<span class="sr-only"></span></a>
+                    <a class="nav-link" href="WebVisualizations/data.html">Data<span class="sr-only"></span></a>
                 </li>
             </ul>
         </div>
     </nav>
+    <!-- End of navbar -->
 
+    <!-- Start of container -->
     <div class="container">
-        <!-- Adding plot maps of weather data  -->
-        <section>
-            <h1>WeatherPy Stats</h1>
-
-            <!-- Adding analysis text -->
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="WebVisualizations/Resources/assets/images/tempmap1.png">
-                        <img target="_blank" src="WebVisualizations/Resources/assets/images/tempmap1.png" width=500px
-                            height=400px alt="Tempurature Map">
-                    </a>
-                </div>
+        <section class="row">
+            <div class="col-md-8">
+                <article class="description-content">
+                    <h1 class="description-header">WeatherPy Stats</h1>
+                    <hr class="description-hr" />
+                    <img src="WebVisualizations/Resources/assets/images/tempmap1.png" alt="" id="description-image" />
+                    <p>The purpose of this project was to analyze how weather changes as you get closer to the equator.
+                        To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a
+                        dataset on over 500 cities.</p>
+                    <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs.
+                        latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This
+                        site provides the source data and visualizations created as part of the analysis, as well as
+                        explanations and descriptions of any trends and correlations witnessed.</p>
+                </article>
             </div>
-
             <div class="col-md-4">
-                <p>
-                    Analysis of weather data will go here.
-                </p>
-            </div>
 
-            <div class="container">
-                <div class="col-md-4">
-                    <h3 class="text-center">Visualizations</h3>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <a href="WebVisualizations/Resources/assets/images/tempmap1.png">
-                                    <img target="_blank" src="WebVisualizations/Resources/assets/images/tempmap1.pngg"
-                                        alt="..." class="img-thumbnail">
-                                </a>
-                                <div class="caption">
-                                    <h3>Temp Map</h3>
-                                </div>
-                            </div>
+                <!-- Start of Visualizations imageNav Area -->
+                <section id="imageNav-area">
+                    <div class="imageNav-content">
+                        <h2 class="imageNav-header">Visualizations</h2>
+                        <hr />
+                        <div id="images">
+                            <a href="WebVisualizations/temp.html"><img
+                                    src="WebVisualizations/Resources/assets/images/tempmap1.png"
+                                    alt="Latitude vs. Max Temperature" class="imageNav-photo"></a>
+                            <a href="WebVisualizations/humidity.html"><img
+                                    src="WebVisualizations/Resources/assets/images/humidmap1.png"
+                                    alt="Latitude vs. Humidity" class="imageNav-photo"></a>
+                            <a href="WebVisualizations/clouds.html"><img
+                                    src="WebVisualizations/Resources/assets/images/cloudmap1.png"
+                                    alt="Latitude vs. Cloudiness" class="imageNav-photo"></a>
+                            <a href="WebVisualizations/wind.html"><img
+                                    src="WebVisualizations/Resources/assets/images/windmap1.png"
+                                    alt="Latitude vs. Wind Speed" class="imageNav-photo"></a>
                         </div>
-                        <div cla class="col-md-4">
-                            <div class="thumbnail">
-                                <a href="WebVisualizations/Resources/assets/images/humidmap1.png">
-                                    <img target="_blank" src="WebVisualizations/Resources/assets/images/humidmap1.png"
-                                        alt="..." class="img-thumbnail">
-                                </a>
-                                <div class="caption">
-                                    <h3>Humidity Map</h3>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </section>
+                <!-- End of the Visualizations imageNav Area -->
+
+                <!-- <div class="container">
+                    <div class="col-md-4">
+                        <h3 class="text-center">Visualizations</h3>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="WebVisualizations/Resources/assets/images/cloudmap1.png">
+                                    <a href="WebVisualizations/Resources/assets/images/tempmap1.png">
                                         <img target="_blank"
-                                            src="WebVisualizations/Resources/assets/images/cloudmap1.png" alt="..."
+                                            src="WebVisualizations/Resources/assets/images/tempmap1.pngg" alt="..."
                                             class="img-thumbnail">
                                     </a>
                                     <div class="caption">
-                                        <h3>Cloud Map</h3>
+                                        <h3>Temp Map</h3>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div cla class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="WebVisualizations/Resources/assets/images/windmap1.png">
+                                    <a href="WebVisualizations/Resources/assets/images/humidmap1.png">
                                         <img target="_blank"
-                                            src="WebVisualizations/Resources/assets/images/windmap1.png" alt="..."
+                                            src="WebVisualizations/Resources/assets/images/humidmap1.png" alt="..."
                                             class="img-thumbnail">
                                     </a>
                                     <div class="caption">
-                                        <h3>Wind Map</h3>
+                                        <h3>Humidity Map</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="thumbnail">
+                                        <a href="WebVisualizations/Resources/assets/images/cloudmap1.png">
+                                            <img target="_blank"
+                                                src="WebVisualizations/Resources/assets/images/cloudmap1.png" alt="..."
+                                                class="img-thumbnail">
+                                        </a>
+                                        <div class="caption">
+                                            <h3>Cloud Map</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="thumbnail">
+                                        <a href="WebVisualizations/Resources/assets/images/windmap1.png">
+                                            <img target="_blank"
+                                                src="WebVisualizations/Resources/assets/images/windmap1.png" alt="..."
+                                                class="img-thumbnail">
+                                        </a>
+                                        <div class="caption">
+                                            <h3>Wind Map</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
             </div>
-
-
-            <hr>
-            <article>
-                <p><em>Humidity Plots</em></p>
-                <a target="_blank" href="WebVisualizations/Resources/assets/images/humidmap1.png">
-                    <img src="WebVisualizations/Resources/assets/images/humidmap1.png" alt="Humidity Map">
-                </a>
-            </article>
-            <hr>
-            <article>
-                <p><em>Cloudy Plots</em></p>
-                <a target="_blank" href="WebVisualizations/Resources/assets/images/cloudmap1.png">
-                    <img src="WebVisualizations/Resources/assets/images/cloudmap1.png" alt="Cloudy Map">
-                </a>
-            </article>
-            <hr>
-            <article>
-                <p><em>Wind Plots</em></p>
-                <a target="_blank" href="WebVisualizations/Resources/assets/images/windmap1.png">
-                    <img src="WebVisualizations/Resources/assets/images/windmap1.png" alt="Wind Map">
-                </a>
-            </article>
         </section>
     </div>
+    <!-- End of container -->
+
+    <!-- Start of footer -->
+    <footer class="footer navbar-fixed-bottom">
+        <div class="two-toned-footer-color"></div>
+        <p class="text-muted text-muted-footer text-center">
+            &copy; Copyright Coding Bootcamp 2017
+        </p>
+    </footer>
+    <!-- End of footer -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
